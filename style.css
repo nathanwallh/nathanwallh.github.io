@@ -1,0 +1,84 @@
+/* General page styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dark grey text */
+    line-height: 1.6; /* Better readability */
+}
+
+/* HEADER STYLES */
+.header-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-img {
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; /* Slight rounding looks more professional */
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 2.5em;
+    white-space: nowrap;
+}
+
+/* MAIN CONTENT STYLES */
+.main-content {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.publication-item {
+    margin-bottom: 30px;
+}
+
+/* Links styling */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 800px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-img {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 200px; /* Force smaller image on phone */
+    }
+    .header-title {
+        position: static;
+        transform: none;
+        font-size: 2em;
+    }
+}
