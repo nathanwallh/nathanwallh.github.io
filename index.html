@@ -4,12 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan Wallheimer</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: sans-serif; /* Makes the font cleaner */
+            margin: 0;
+            padding: 0;
+            color: #333; /* Dark grey is easier on eyes than pure black */
+        }
+
+        /* HEADER STYLES (From previous step) */
+        .header-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            border-bottom: 1px solid #ddd; /* Adds a faint line below header */
+        }
+
+        .header-img {
+            margin-right: auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Optional: rounds the photo corners slightly */
+        }
+
+        .header-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        /* NEW: CONTENT STYLES */
+        .main-content {
+            max-width: 800px; /* Prevents text from stretching too wide on big screens */
+            margin: 40px auto; /* Centers the content block in the middle of screen */
+            text-align: center; /* Centers the text within the block */
+            padding: 0 20px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #eee; /* Adds a small underline to subtitles */
+            display: inline-block; /* Keeps underline only as wide as text */
+            padding-bottom: 5px;
+        }
+
+        .publication-item {
+            margin-bottom: 20px;
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 800px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .header-title {
+                position: static;
+                transform: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <img src="./Pictures/me.jpg" alt="Nathan Wallheimer" width="200">
+    <div class="header-container">
+        <img src="./Pictures/me.jpg" alt="Nathan Wallheimer" width="300" class="header-img">
+        <h1 class="header-title">Nathan Wallheimer</h1>
+    </div>
 
-    <h1>Nathan Wallheimer</h1>
+    <div class="main-content">
+        
+        <h2>About me</h2>
+        <p>
+            bla bla bla
+        </p>
+
+        <h2>Publications</h2>
+        
+        <div class="publication-item">
+            <p>
+                <strong>blah blah (ITCS 2018)</strong><br>
+                Joint work with John Doe<br>
+                <a href="#">[arXiv]</a>, <a href="#">[Slides]</a>, <a href="#">[Video]</a>
+            </p>
+        </div>
+
+        </div>
 
 </body>
 </html>
