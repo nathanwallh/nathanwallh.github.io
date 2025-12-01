@@ -95,3 +95,41 @@ a:hover {
         font-size: 2em;
     }
 }
+
+/* TEACHING TABLE STYLES */
+.teaching-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes gap between cell borders */
+    margin-top: 10px;
+}
+
+.teaching-table td {
+    vertical-align: top; /* Ensures text starts at the top of the cell */
+    padding-bottom: 25px; /* Adds space between rows */
+    font-size: 1.15rem;   /* Matches your bio font size */
+    line-height: 1.5;
+}
+
+.year-col {
+    width: 140px; /* Fixed width for the date column */
+    font-weight: bold;
+    color: #666; /* Slightly lighter color for dates */
+    padding-right: 15px;
+    text-align: left; /* Ensures dates align left */
+}
+
+.details-col {
+    text-align: left; /* Ensures details align left */
+}
+
+/* Mobile: Stack the date on top of the course name on small screens */
+@media (max-width: 600px) {
+    .teaching-table td {
+        display: block;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    .details-col {
+        padding-bottom: 30px; /* Extra space after the full entry */
+    }
+}
