@@ -7,6 +7,7 @@
     <title>Nathan Wallheimer</title>
     
     <link rel="stylesheet" href="style.css">
+    <script src="publications.js" defer></script>
 </head>
 <body>
 
@@ -41,10 +42,7 @@
         </section>
 
         <section aria-labelledby="publications-heading">
-        <div class="section-heading">
-            <h2 id="publications-heading">Publications</h2>
-            <a class="lop-link" href="./LOP/lop.pdf" type="application/pdf">Complete list with abstracts (PDF)</a>
-        </div>
+        <h2 id="publications-heading">Publications</h2>
         
         <ol class="publication-list" role="list">
             <li class="publication-item">
@@ -52,6 +50,13 @@
                 <p class="publication-authors">Joint work with Amir Abboud, Shyan Akmal, and Ron Safier.</p>
                 <div class="publication-meta">
                     <span class="publication-venue">ITCS 2027</span>
+                    <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-structured-lower-bounds" aria-label="Abstract for Lower Bounds for Structured OMv, APSP, and Triangle Detection">[abstract]</button>
+                </div>
+                <div class="publication-abstract" id="abstract-structured-lower-bounds" hidden>
+                    <p>We study the fine-grained complexity of core algorithmic problems under two fundamental notions of structure: bounded VC-dimension and exclusion of a fixed graph \(H\). We obtain the first VC-parameterized lower bounds for OMv and the first conditional lower bounds for APSP and Triangle Detection under bounded distance VC-dimension. These results show that the known \(1/d\)-type savings in the exponent have the correct order of magnitude.</p>
+                    <p>Assuming the OMv Conjecture, we prove that OMv in matrices of VC-dimension at most \(d\) requires \(n^{3-1/d-O(1/d^2)}\) total time, nearly matching the recent \(\widetilde{O}(n^{3-1/d})\) upper bound of Anand, van den Brand, and McCarty. We also obtain tight bounds for VC-dimension \(2\) and for OMv in matrices of bounded VC-density. Assuming the Boolean Matrix Multiplication Conjecture, we show that, for every sufficiently large \(d\), combinatorial algorithms for APSP and Triangle Detection in graphs of distance VC-dimension at most \(d\) require \(n^{3-O(1/d)}\) time. Together with known upper bounds, this determines the correct \(\Theta(1/d)\) order of the exponent saving.</p>
+                    <p>Our main conceptual contribution is to put forward filtering as a general method for proving fine-grained lower bounds on structured inputs. A collection of filters eliminates the configurations forbidden by the structural promise while ensuring that every witness in the original instance survives in at least one filtered instance. For bounded VC-dimension, the filters prevent complicated shattering patterns; for \(H\)-freeness, suitable \(H\)-free constructions related to generalized Turán problems play the analogous role. Applying this perspective, we prove an \(n^{3-3v(H)/e(H)-o(1)}\) lower bound for combinatorial Triangle Detection in \(H\)-free graphs whenever \(e(H)&gt;3v(H)\), and complement it with matching \(n^{3-\Theta(1/k)}\) upper bound for an infinite family of \(k\)-vertex patterns. Specialized lower bounds are also given for the case where \(H\) is a biclique.</p>
+                    <p>Finally, we uncover a new algorithmic connection between these two notions of structure: for every bipartite pattern \(H\), induced \(H\)-freeness allows Triangle Detection to be reduced to instances of bounded VC-dimension. This yields randomized truly subcubic algorithms for all bipartite \(H\), resolving in particular the previously open case of induced \(P_7\)-free graphs.</p>
                 </div>
             </li>
             <li class="publication-item">
@@ -61,6 +66,12 @@
                     <span class="publication-venue">ESA 2026</span>
                     <a href="https://arxiv.org/abs/2602.23196">arXiv</a>
                     <a href="./Slides/ESA26-Slides.pdf">Slides</a>
+                    <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-equivalent-dichotomies" aria-label="Abstract for Equivalent Dichotomies for Triangle Detection in Subgraph, Induced, and Colored H-Free Graphs">[abstract]</button>
+                </div>
+                <div class="publication-abstract" id="abstract-equivalent-dichotomies" hidden>
+                    <p>A recent paper by the authors (ITCS'26) initiates the study of the Triangle Detection problem in graphs avoiding a fixed pattern \(H\) as a subgraph and proposes a <em>dichotomy hypothesis</em> characterizing which patterns \(H\) make the Triangle Detection problem easier in \(H\)-free graphs than in general graphs. In this work, we demonstrate that this hypothesis is, in fact, equivalent to analogous hypotheses in two broader settings that a priori seem significantly more challenging: <em>induced</em> \(H\)-free graphs and <em>colored</em> \(H\)-free graphs.</p>
+                    <p>Our main contribution is a reduction from the induced \(H\)-free case to the non-induced \(H^{+}\)-free case, where \(H^{+}\) preserves the structural properties of \(H\) that are relevant for the dichotomy, namely \(3\)-colorability and triangle count. A similar reduction is given for the colored case.</p>
+                    <p>A key technical ingredient is a self-reduction to Unique Triangle Detection that preserves the induced \(H\)-freeness property, via a new color-coding-like reduction.</p>
                 </div>
             </li>
             <li class="publication-item">
@@ -69,6 +80,12 @@
                 <div class="publication-meta">
                     <span class="publication-venue">ICALP 2026</span>
                     <a href="https://arxiv.org/abs/2605.09006">arXiv</a>
+                    <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-witness-sensitive-diamonds" aria-label="Abstract for Witness-Sensitive Detection of Diamonds">[abstract]</button>
+                </div>
+                <div class="publication-abstract" id="abstract-witness-sensitive-diamonds" hidden>
+                    <p>We provide a fast <em>witness-sensitive</em> algorithm for detecting an induced diamond (a \(K_4\) minus an edge) in an \(n\)-vertex graph containing \(t\) induced diamonds. Our algorithm runs in time \(\tilde{O}(\min(n^{2.425}/t^{0.25}+n^2, n^\omega))\) with high probability, improving upon the prior state of the art (witness-oblivious) algorithm that runs in time \(O(n^\omega\log{n})\) [Vassilevska Williams, Wang, Williams, Yu, SODA 2014] whenever \(t \geq n^{(3-\omega)/3}\), where \(\omega &lt; 2.372\) is the matrix multiplication exponent.</p>
+                    <p>Our key insight is that the size of a clique containing one of the triangles of an induced diamond plays a crucial role in detecting such a diamond. We say that a diamond is \(r\)-heavy if this size is at least \(r\), and we provide a fast detection algorithm for \(r\)-heavy diamonds in \(\tilde{O}(r \cdot (n/r)^\omega + (n/r)^3+ nr)\) time. When there are no \(r\)-heavy diamonds, we provide a different fast detection algorithm in \(\tilde{O}(\mathsf{MM}(n,n,n\sqrt{r/t}))\) time, where \(\mathsf{MM}(a,b,c)\) denotes the time to multiply an \(a \times b\) matrix by a \(b \times c\) matrix, which is conditionally optimal for \(r=\tilde{O}(1)\).</p>
+                    <p>Our main technical contribution is in designing a refinement framework for sampling vectors, which allows sampling vertices for detecting diamonds in a manner that is adaptive to the structure of graphs with no \(r\)-heavy diamonds. We establish that our technique is of a wide applicability, by showing how it also allows for faster witness-sensitive algorithms for \(4\)-SUM and for a special case of \(4\)-cycles.</p>
                 </div>
             </li>
             <li class="publication-item">
@@ -80,6 +97,21 @@
                     <a href="./Slides/H-Free-Slides.pdf">Slides</a>
                     <a href="./Posters/HALG26-Poster.pdf">Poster</a>
                     <a href="https://www.youtube.com/watch?v=uO4VRLRRp-M">Video</a>
+                    <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-triangle-detection" aria-label="Abstract for Triangle Detection in H-Free Graphs">[abstract]</button>
+                </div>
+                <div class="publication-abstract" id="abstract-triangle-detection" hidden>
+                    <p>We initiate the study of combinatorial algorithms for Triangle Detection in \(H\)-free graphs. The goal is to decide if a graph that forbids a fixed pattern \(H\) as a subgraph contains a triangle, using only “combinatorial” methods that notably exclude fast matrix multiplication. Our work aims to classify which patterns admit a subcubic speedup, working towards a dichotomy theorem.</p>
+                    <p>On the lower bound side, we show that if \(H\) is not \(3\)-colorable or contains more than one triangle, the complexity of the problem remains unchanged, and no combinatorial speedup is likely possible.</p>
+                    <p>On the upper bound side, we develop an embedding approach that results in a strongly subcubic, combinatorial algorithm for a rich class of “embeddable” patterns. Specifically, for an embeddable pattern of size \(k\), our algorithm runs in \(\widetilde{O}(n^{3-\frac{1}{2^{k-3}}})\) time, where \(\widetilde{O}(\cdot)\) hides poly-logarithmic factors. This algorithm also extends to listing all the triangles within the same time bound. We supplement this main result with two generalizations:</p>
+                    <ul>
+                        <li>A generalization to patterns that are embeddable up to a single obstacle that arises from a triangle in the pattern. This completes our classification for small patterns, yielding a dichotomy theorem for all patterns of size up to eight.</li>
+                        <li>An \(H\)-sensitive algorithm for embeddable patterns, which runs faster when the number of copies of \(H\) is significantly smaller than the maximum possible \(\Omega(n^{k})\).</li>
+                    </ul>
+                    <p>Finally, we focus on the special case of odd cycles. We present specialized Triangle Detection algorithms that are very efficient:</p>
+                    <ul>
+                        <li>A combinatorial algorithm for \(C_{2k+1}\)-free graphs that runs in \(\widetilde{O}(m+n^{1+2/k})\) time for every \(k \geq 2\), where \(m\) is the number of edges in the graph.</li>
+                        <li>A combinatorial \(C_5\)-sensitive algorithm that runs in \(\widetilde{O}(n^2 + n^{4/3} t^{1/3})\) time, where \(t\) is the number of \(5\)-cycles in the graph.</li>
+                    </ul>
                 </div>
             </li>
             <li class="publication-item">
@@ -89,6 +121,10 @@
                     <span class="publication-venue">SODA 2025</span>
                     <a href="https://arxiv.org/abs/2410.18661">arXiv</a>
                     <a href="./Slides/Sumset-Slides.pdf">Slides</a>
+                    <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-recognizing-sumsets" aria-label="Abstract for Recognizing Sumsets is NP-Complete">[abstract]</button>
+                </div>
+                <div class="publication-abstract" id="abstract-recognizing-sumsets" hidden>
+                    <p>Sumsets are central objects in additive combinatorics. In 2007, Granville asked whether one can efficiently recognize whether a given set \(S\) is a sumset, i.e. whether there is a set \(A\) such that \(A+A=S\). Granville suggested an algorithm that takes exponential time in the size of the given set, but can we do polynomial or even linear time? This basic computational question is indirectly asking a fundamental structural question: do the special characteristics of sumsets allow them to be efficiently recognizable? In this paper, we answer this question negatively by proving that the problem is NP-complete. Specifically, our results hold for integer sets and over any finite field. Assuming the Exponential Time Hypothesis, our lower bound becomes \(2^{\Omega(n^{1/4})}\).</p>
                 </div>
             </li>
             <li class="publication-item">
@@ -99,6 +135,15 @@
                     <a href="https://arxiv.org/abs/2403.08394">arXiv</a>
                     <a href="./Slides/WTERs-Slides.pdf">Slides</a>
                     <a href="./Posters/HALG24-Poster.pdf">Poster</a>
+                    <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-expander-reductions-generalized" aria-label="Abstract for Worst-Case to Expander-Case Reductions: Derandomized and Generalized">[abstract]</button>
+                </div>
+                <div class="publication-abstract" id="abstract-expander-reductions-generalized" hidden>
+                    <p>A recent paper by Abboud and Wallheimer [ITCS 2023] presents self-reductions for various fundamental graph problems, which transform worst-case instances to expanders, thus proving that the complexity remains unchanged if the input is assumed to be an expander. An interesting corollary of their self-reductions is that if some problem admits such reduction, then the popular algorithmic paradigm based on expander-decompositions is useless against it. In this paper, we improve their core gadget, which augments a graph to make it an expander while retaining its important structure. Our new core construction has the benefit of being simple to analyze and generalize while obtaining the following results:</p>
+                    <ul>
+                        <li>A derandomization of the self-reductions, showing that the equivalence between worst-case and expander-case holds even for deterministic algorithms, and ruling out the use of expander-decompositions as a derandomization tool.</li>
+                        <li>An extension of the results to other models of computation, such as the Fully Dynamic model and the Congested Clique model. In the former, we either improve or provide an alternative approach to some recent hardness results for dynamic expander graphs by Henzinger, Paz, and Sricharan [ESA 2022].</li>
+                    </ul>
+                    <p>In addition, we continue this line of research by designing new self-reductions for more problems, such as Max-Cut and dynamic Densest Subgraph, and demonstrating that the core gadget can be utilized to lift lower bounds based on the OMv Conjecture to expanders.</p>
                 </div>
             </li>
             <li class="publication-item">
@@ -110,6 +155,11 @@
                     <a href="./Slides/WTERs1-Slides.pdf">Slides</a>
                     <a href="./Posters/HALG23-Poster.pdf">Poster</a>
                     <a href="https://www.youtube.com/watch?v=BV31ygbFEtg">Video</a>
+                    <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-expander-reductions" aria-label="Abstract for Worst-Case to Expander-Case Reductions">[abstract]</button>
+                </div>
+                <div class="publication-abstract" id="abstract-expander-reductions" hidden>
+                    <p>In recent years, the <em>expander decomposition method</em> was used to develop many graph algorithms, resulting in major improvements to longstanding complexity barriers. This powerful hammer has led the community to (1) believe that most problems are as easy on worst-case graphs as they are on expanders, and (2) suspect that expander decompositions are the key to breaking the remaining longstanding barriers in fine-grained complexity.</p>
+                    <p>We set out to investigate the extent to which these two things are true (and for which problems). Towards this end, we put forth the concept of <em>worst-case to expander-case</em> self-reductions. We design a collection of such reductions for fundamental graph problems, verifying belief (1) for them. The list includes \(k\)-Clique, \(4\)-Cycle, Maximum Cardinality Matching, Vertex-Cover, and Minimum Dominating Set. Interestingly, for most (but not all) of these problems the proof is via a simple gadget reduction, <em>not</em> via expander decompositions, showing that this hammer is effectively useless against the problem and contradicting (2).</p>
                 </div>
             </li>
             <li class="publication-item">
@@ -119,6 +169,17 @@
                     <span class="publication-venue">ISAAC 2022</span>
                     <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ISAAC.2022.27">DROPS</a>
                     <a href="./Slides/ISAAC22-Slides.pdf">Slides</a>
+                    <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-okamura-seymour" aria-label="Abstract for Improved Compression of the Okamura-Seymour Metric">[abstract]</button>
+                </div>
+                <div class="publication-abstract" id="abstract-okamura-seymour" hidden>
+                    <p>Let \(G=(V,E)\) be an undirected unweighted planar graph. Consider a vector storing the distances from an arbitrary vertex \(v\) to all vertices \(S = \{ s_1 , s_2 , \ldots , s_k \}\) of a single face in their cyclic order. The <em>pattern</em> of \(v\) is obtained by taking the difference between every pair of consecutive values of this vector. In STOC'19, Li and Parter used a VC-dimension argument to show that in planar graphs, the number of <em>distinct</em> patterns, denoted \(x\), is only \(O(k^3)\). This resulted in a simple compression scheme requiring \(\tilde O(\min \{ k^4+|T|, k\cdot |T|\})\) space to encode the distances between \(S\) and a subset of terminal vertices \(T \subseteq V\). This is known as the Okamura-Seymour metric compression problem.</p>
+                    <p>We give an alternative proof of the \(x=O(k^3)\) bound that exploits planarity beyond the VC-dimension argument. Namely, our proof relies on cut-cycle duality, as well as on the fact that distances among vertices of \(S\) are bounded by \(k\).</p>
+                    <p>Our method implies the following:</p>
+                    <ol>
+                        <li>An \(\tilde{O}(x+k+|T|)\) space compression of the Okamura-Seymour metric, thus improving the compression of Li and Parter to \(\tilde O(\min \{k^3+|T|,k \cdot |T| \})\).</li>
+                        <li>An optimal \(\tilde{O}(k+|T|)\) space compression of the Okamura-Seymour metric, in the case where the vertices of \(T\) induce a connected component in \(G\).</li>
+                        <li>A tight bound of \(x = \Theta(k^2)\) for the family of Halin graphs, whereas the VC-dimension argument is limited to showing \(x=O(k^3)\).</li>
+                    </ol>
                 </div>
             </li>
         </ol>
