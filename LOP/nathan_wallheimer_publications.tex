@@ -1,0 +1,204 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=22mm,headheight=19pt]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{navy}{HTML}{17324D}
+\definecolor{teal}{HTML}{147D80}
+\definecolor{ink}{HTML}{28323C}
+\definecolor{rulegray}{HTML}{CBD3D9}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=navy,
+  urlcolor=teal,
+  pdftitle={List of Publications -- Nathan Wallheimer},
+  pdfauthor={Nathan Wallheimer}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\color{ink}Nathan Wallheimer}
+\fancyhead[R]{\footnotesize\color{ink}List of Publications}
+\fancyfoot[C]{\footnotesize\color{ink}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{rulegray}\leaders\hrule height \headrulewidth\hfill}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlist[itemize]{leftmargin=1.55em,itemsep=0.2em,topsep=0.35em,parsep=0pt}
+
+\newcommand{\Order}{O}
+\newcommand{\tOrder}{\widetilde O}
+\newcommand{\Hplus}{H^{+}}
+\newcommand{\nathanauthor}{\textbf{\color{navy}Nathan Wallheimer}}
+
+\newcommand{\publicationheading}[4]{%
+  \Needspace{7\baselineskip}%
+  \par\addvspace{1.25em}%
+  \begingroup\raggedright
+  {\large\bfseries\color{navy}#1}%
+  \hspace{0.5em}{\footnotesize\bfseries\color{teal}\mbox{[#2]}}%
+  \if\relax\detokenize{#3}\relax
+  \else
+    \enspace{\footnotesize[\href{#3}{link}]}%
+  \fi
+  \par\endgroup\nobreak\vspace{0.2em}%
+  {\small\color{ink}#4}%
+  \par\nobreak\vspace{0.35em}%
+  {\footnotesize\bfseries\color{ink}\MakeUppercase{Abstract}}%
+  \par\nobreak\vspace{0.15em}%
+}
+
+\newenvironment{publicationabstract}
+  {\begingroup\small\color{ink}\setlength{\parskip}{0.48em}}
+  {\par\endgroup}
+
+\begin{document}
+
+{\Huge\bfseries\color{navy}List of Publications}\par
+\vspace{0.2em}
+{\large\color{ink}Nathan Wallheimer}\par
+\vspace{0.45em}
+{\color{rulegray}\hrule height 0.8pt}
+
+\publicationheading
+  {Lower Bounds for Structured OMv, APSP, and Triangle Detection}
+  {To appear in ITCS 2027}
+  {}
+  {Amir Abboud, Shyan Akmal, Ron Safier, and \nathanauthor}
+\begin{publicationabstract}
+We study the fine-grained complexity of core algorithmic problems under two fundamental notions of structure: bounded VC-dimension and exclusion of a fixed graph $H$. We obtain the first VC-parameterized lower bounds for OMv and the first conditional lower bounds for APSP and Triangle Detection under bounded distance VC-dimension. These results show that the known $1/d$-type savings in the exponent have the correct order of magnitude.
+
+Assuming the OMv Conjecture, we prove that OMv in matrices of VC-dimension at most $d$ requires $n^{3-1/d-O(1/d^2)}$ total time, nearly matching the recent $\tOrder(n^{3-1/d})$ upper bound of Anand, van den Brand, and McCarty. We also obtain tight bounds for VC-dimension $2$ and for OMv in matrices of bounded VC-density. Assuming the Boolean Matrix Multiplication Conjecture, we show that, for every sufficiently large $d$, combinatorial algorithms for APSP and Triangle Detection in graphs of distance VC-dimension at most $d$ require $n^{3-O(1/d)}$ time. Together with known upper bounds, this determines the correct $\Theta(1/d)$ order of the exponent saving.
+
+Our main conceptual contribution is to put forward filtering as a general method for proving fine-grained lower bounds on structured inputs. A collection of filters eliminates the configurations forbidden by the structural promise while ensuring that every witness in the original instance survives in at least one filtered instance. For bounded VC-dimension, the filters prevent complicated shattering patterns; for $H$-freeness, suitable $H$-free constructions related to generalized Tur\'an problems play the analogous role. Applying this perspective, we prove an $n^{3-3v(H)/e(H)-o(1)}$ lower bound for combinatorial Triangle Detection in $H$-free graphs whenever $e(H)>3v(H)$, and complement it with matching $n^{3-\Theta(1/k)}$ upper bound for an infinite family of $k$-vertex patterns. Specialized lower bounds are also given for the case where $H$ is a biclique.
+
+Finally, we uncover a new algorithmic connection between these two notions of structure: for every bipartite pattern $H$, induced $H$-freeness allows Triangle Detection to be reduced to instances of bounded VC-dimension. This yields randomized truly subcubic algorithms for all bipartite $H$, resolving in particular the previously open case of induced $P_7$-free graphs.
+\end{publicationabstract}
+
+\publicationheading
+  {Equivalent Dichotomies for Triangle Detection in Subgraph, Induced, and Colored $H$-Free Graphs}
+  {ESA 2026}
+  {https://arxiv.org/abs/2602.23196}
+  {Amir Abboud, Ron Safier, and \nathanauthor}
+\begin{publicationabstract}
+A recent paper by the authors (ITCS'26) initiates the study of the Triangle Detection problem in graphs avoiding a fixed pattern $H$ as a subgraph and proposes a \emph{dichotomy hypothesis} characterizing which patterns $H$ make the Triangle Detection problem easier in $H$-free graphs than in general graphs.
+In this work, we demonstrate that this hypothesis is, in fact, equivalent to analogous hypotheses in two broader settings that a priori seem significantly more challenging: \emph{induced} $H$-free graphs and \emph{colored} $H$-free graphs.
+
+Our main contribution is a reduction from the induced $H$-free case to the non-induced $\Hplus$-free case, where $\Hplus$ preserves the structural properties of $H$ that are relevant for the dichotomy, namely $3$-colorability and triangle count. A similar reduction is given for the colored case.
+
+A key technical ingredient is a self-reduction to Unique Triangle Detection that preserves the induced $H$-freeness property, via a new color-coding-like reduction.
+\end{publicationabstract}
+
+\publicationheading
+  {Witness-Sensitive Detection of Diamonds}
+  {ICALP 2026}
+  {https://arxiv.org/abs/2605.09006}
+  {Keren Censor-Hillel, Tomer Even, Virginia Vassilevska Williams, and \nathanauthor}
+\begin{publicationabstract}
+We provide a fast \emph{witness-sensitive} algorithm for detecting an induced diamond (a $K_4$ minus an edge) in an $n$-vertex graph containing $t$ induced diamonds. Our algorithm runs in time $\tilde{O}(\min(n^{2.425}/t^{0.25}+n^2, n^\omega))$ with high probability, improving upon the prior state of the art (witness-oblivious) algorithm that runs in time $O(n^\omega\log{n})$ [Vassilevska Williams, Wang, Williams, Yu, SODA 2014] whenever $t \geq n^{(3-\omega)/3}$, where $\omega < 2.372$ is the matrix multiplication exponent.
+
+Our key insight is that the size of a clique containing one of the triangles of an induced diamond plays a crucial role in detecting such a diamond. We say that a diamond is $r$-heavy if this size is at least $r$, and we provide a fast detection algorithm for $r$-heavy diamonds in $\tilde{O}(r \cdot (n/r)^\omega + (n/r)^3+ nr)$ time.
+When there are no $r$-heavy diamonds, we provide a different fast detection algorithm in $\tilde{O}(\mathsf{MM}(n,n,n\sqrt{r/t}))$ time, where $\mathsf{MM}(a,b,c)$ denotes the time to multiply an $a \times b$ matrix by a $b \times c$ matrix, which is conditionally optimal for $r=\tilde{O}(1)$.
+
+Our main technical contribution is in designing a refinement framework for sampling vectors, which allows sampling vertices for detecting diamonds in a manner that is adaptive to the structure of graphs with no $r$-heavy diamonds.
+We establish that our technique is of a wide applicability, by showing how it also allows for faster witness-sensitive algorithms for $4$-SUM and for a special case of $4$-cycles.
+\end{publicationabstract}
+
+\publicationheading
+  {Triangle Detection in $H$-Free Graphs}
+  {ITCS 2026}
+  {https://arxiv.org/abs/2511.17224}
+  {Amir Abboud, Ron Safier, and \nathanauthor}
+\begin{publicationabstract}
+We initiate the study of combinatorial algorithms for Triangle Detection in $H$-free graphs. The goal is to decide if a graph that forbids a fixed pattern $H$ as a subgraph contains a triangle, using only ``combinatorial'' methods that notably exclude fast matrix multiplication. Our work aims to classify which patterns admit a subcubic speedup, working towards a dichotomy theorem.
+
+On the lower bound side, we show that if $H$ is not $3$-colorable or contains more than one triangle, the complexity of the problem remains unchanged, and no combinatorial speedup is likely possible.
+
+On the upper bound side, we develop an embedding approach that results in a strongly subcubic, combinatorial algorithm for a rich class of ``embeddable'' patterns.
+Specifically, for an embeddable pattern of size $k$, our algorithm runs in $\tOrder(n^{3-\frac{1}{2^{k-3}}})$ time, where $\tOrder(\cdot)$ hides poly-logarithmic factors.
+This algorithm also extends to listing all the triangles within the same time bound. We supplement this main result with two generalizations:
+\begin{itemize}
+  \item A generalization to patterns that are embeddable up to a single obstacle that arises from a triangle in the pattern. This completes our classification for small patterns, yielding a dichotomy theorem for all patterns of size up to eight.
+  \item An $H$-sensitive algorithm for embeddable patterns, which runs faster when the number of copies of $H$ is significantly smaller than the maximum possible $\Omega(n^{k})$.
+\end{itemize}
+Finally, we focus on the special case of odd cycles. We present specialized Triangle Detection algorithms that are very efficient:
+\begin{itemize}
+  \item A combinatorial algorithm for $C_{2k+1}$-free graphs that runs in $\tOrder(m+n^{1+2/k})$ time for every $k \geq 2$, where $m$ is the number of edges in the graph.
+  \item A combinatorial $C_5$-sensitive algorithm that runs in $\tOrder(n^2 + n^{4/3} t^{1/3})$ time, where $t$ is the number of $5$-cycles in the graph.
+\end{itemize}
+\end{publicationabstract}
+
+\publicationheading
+  {Recognizing Sumsets is NP-Complete}
+  {SODA 2025}
+  {https://arxiv.org/abs/2410.18661}
+  {Amir Abboud, Nick Fischer, Ron Safier, and \nathanauthor}
+\begin{publicationabstract}
+\noindent
+Sumsets are central objects in additive combinatorics. In 2007, Granville asked whether one can efficiently recognize whether a given set $S$ is a sumset, i.e. whether there is a set $A$ such that $A+A=S$. Granville suggested an algorithm that takes exponential time in the size of the given set, but can we do polynomial or even linear time? This basic computational question is indirectly asking a fundamental structural question: do the special characteristics of sumsets allow them to be efficiently recognizable? In this paper, we answer this question negatively by proving that the problem is NP-complete. Specifically, our results hold for integer sets and over any finite field. Assuming the Exponential Time Hypothesis, our lower bound becomes~\smash{$2^{\Omega(n^{1/4})}$}.
+\end{publicationabstract}
+
+\publicationheading
+  {Worst-Case to Expander-Case Reductions: Derandomized and Generalized}
+  {ESA 2024}
+  {https://arxiv.org/abs/2403.08394}
+  {Amir Abboud and \nathanauthor}
+\begin{publicationabstract}
+A recent paper by Abboud and Wallheimer [ITCS 2023] presents self-reductions for various fundamental graph problems,
+which transform worst-case instances to expanders, thus proving that the complexity remains unchanged if the input is assumed to be an expander.
+An interesting corollary of their self-reductions is that if some problem admits such reduction, then the popular algorithmic paradigm based on expander-decompositions is useless against it.
+In this paper, we improve their core gadget, which augments a graph to make it an expander while retaining its important structure. Our new core construction has the benefit of being simple to analyze and generalize while obtaining the following results:
+\begin{itemize}
+  \item A derandomization of the self-reductions, showing that the equivalence between worst-case and expander-case holds even for deterministic algorithms,
+  and ruling out the use of expander-decompositions as a derandomization tool.
+  \item An extension of the results to other models of computation, such as the Fully Dynamic model
+  and the Congested Clique model. In the former, we either improve or provide an alternative approach
+  to some recent hardness results for dynamic expander graphs by Henzinger, Paz, and Sricharan [ESA 2022].
+\end{itemize}
+In addition, we continue this line of research by designing new self-reductions for more problems, such as Max-Cut and dynamic Densest Subgraph, and demonstrating that the core gadget
+can be utilized to lift lower bounds based on the OMv Conjecture to expanders.
+\end{publicationabstract}
+
+\publicationheading
+  {Worst-Case to Expander-Case Reductions}
+  {ITCS 2023}
+  {https://arxiv.org/abs/2211.12833}
+  {Amir Abboud and \nathanauthor}
+\begin{publicationabstract}
+In recent years, the \emph{expander decomposition method} was used to develop many graph algorithms, resulting in major improvements to longstanding complexity barriers.
+This powerful hammer has led the community to (1) believe that most problems are as easy on worst-case graphs as they are on expanders, and (2) suspect that expander decompositions are the key to breaking the remaining longstanding barriers in fine-grained complexity.
+
+We set out to investigate the extent to which these two things are true (and for which problems).
+Towards this end, we put forth the concept of \emph{worst-case to expander-case} self-reductions.
+We design a collection of such reductions for fundamental graph problems, verifying belief (1) for them. The list includes $k$-Clique, $4$-Cycle, Maximum Cardinality Matching, Vertex-Cover, and Minimum Dominating Set.
+Interestingly, for most (but not all) of these problems the proof is via a simple gadget reduction, \emph{not} via expander decompositions, showing that this hammer is effectively useless against the problem and contradicting (2).
+\end{publicationabstract}
+
+\publicationheading
+  {Improved Compression of the Okamura-Seymour Metric}
+  {ISAAC 2022}
+  {https://arxiv.org/abs/2202.05127}
+  {Shay Mozes, \nathanauthor, and Oren Weimann}
+\begin{publicationabstract}
+\noindent Let $G=(V,E)$ be an undirected unweighted planar graph.
+Consider a vector storing the distances from an arbitrary vertex $v$ to all vertices $S = \{ s_1 , s_2 , \ldots , s_k \}$ of a single face in their cyclic order. The {\em pattern} of $v$ is obtained by taking the difference between every pair of consecutive values of this vector. In STOC'19, Li and Parter used a VC-dimension argument to show that in planar graphs, the number of {\em distinct} patterns, denoted $x$, is only $O(k^3)$.
+This resulted in a simple compression scheme requiring $\tilde O(\min \{ k^4+|T|, k\cdot |T|\})$ space to encode the distances between $S$ and a subset of terminal vertices $T \subseteq V$. This is known as the Okamura-Seymour metric compression problem.
+
+We give an alternative proof of the $x=O(k^3)$ bound that exploits planarity beyond the VC-dimension argument. Namely, our proof relies on cut-cycle duality, as well as on the fact that distances among vertices of $S$ are bounded by $k$.
+Our method implies the following:\\\ (1) An $\tilde{O}(x+k+|T|)$ space compression of the Okamura-Seymour metric, thus improving the compression of Li and Parter to $\tilde O(\min \{k^3+|T|,k \cdot |T| \})$. \\
+ (2) An optimal $\tilde{O}(k+|T|)$ space compression of the Okamura-Seymour metric, in the case where the vertices of $T$ induce a connected component in $G$.
+\\
+ (3) A tight bound of $x = \Theta(k^2)$ for the family of Halin graphs, whereas the VC-dimension argument is limited to showing $x=O(k^3)$.
+\end{publicationabstract}
+
+\end{document}
