@@ -10,73 +10,120 @@
 </head>
 <body>
 
-    <div class="header-container">
-        <img src="./Pictures/halg24.jpg" alt="Nathan Wallheimer" width="300" class="header-img">
-        <h1 class="header-title">Nathan Wallheimer</h1>
-    </div>
+    <header class="header-container">
+        <img src="./Pictures/portrait.jpg" alt="Nathan Wallheimer" width="200" height="200" class="header-img">
+        <div class="header-info">
+            <h1 class="header-title">Nathan Wallheimer</h1>
+            <p class="header-role">PhD student in Theoretical Computer Science</p>
+            <p class="header-affiliation">Weizmann Institute of Science</p>
+            <nav class="contact-links" aria-label="CV and contact">
+                <a class="cv-link" href="./cv.pdf" type="application/pdf">CV (PDF)</a>
+                <a class="email-link" href="mailto:nathan.wallheimer@weizmann.ac.il">nathan.wallheimer@weizmann.ac.il</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="main-content">
+    <main class="main-content">
 
-     <h2>About me</h2>
+        <section aria-labelledby="about-heading">
+        <h2 id="about-heading">About me</h2>
             
         <div class="bio-text">
             <p>
                 Hi! I am Nathan Wallheimer, a third-year PhD student in Theoretical Computer Science at the <a href="https://www.weizmann.ac.il/math/">Weizmann Institute of Science</a>, advised by <a href="https://www.weizmann.ac.il/math/AmirAbboud/home">Prof. Amir Abboud</a>.
-                My main research area is complexity theory, specifically fine-grained complexity and algorithms. Recently, I have also been working on lower bounds for distributed algorithms (work in progress). I am also interested in extremal and additive combinatorics. 
+                My main research area is complexity theory, specifically fine-grained complexity and algorithms. 
+                Recently, I have also been working on distributed algorithms and probabilistic extremal combinatorics. 
             </p>
             <p>
                 Previously, I completed my Master's at the <a href="https://cs.hevra.haifa.ac.il/index.php/en/">University of Haifa</a> under the supervision of <a href="https://www.cs.haifa.ac.il/~oren/">Prof. Oren Weimann</a>, where we worked on data structures for planar graphs. 
-                You can contact me via nathan.wallheimer@weizmann.ac.il.
             </p>
-        </div>       
-
-        <h2>Publications</h2>
-        
-        <div class="publication-item">
-            <p>
-	    <strong>Lower Bounds for Structured OMv, APSP, and Triangle Detection (ITCS 2027)</strong><br>
-                Joint work with Amir Abboud, Shyan Akmal, and Ron Safier.<br>
-          </p>
-            <p>
-	    <strong>Equivalent Dichotomies for Triangle Detection in Subgraph, Induced, and <br>Colored H-Free Graphs (ESA 2026)</strong><br>
-                Joint work with Amir Abboud and Ron Safier.<br>
-                <a href="https://arxiv.org/abs/2602.23196">[arXiv]</a>, <a href="./Slides/ESA26-Slides.pdf">[Slides]</a>
-          </p>
-            <p>
-                <strong>Witness-Sensitive Detection of Diamonds (ICALP 2026)</strong><br>
-                Joint work with Tomer Even, Keren Censor-Hillel, and Virginia Vassilevska Williams.<br>
-                <a href="https://arxiv.org/abs/2605.09006">[arXiv]</a>
-	    </p>
-            <p>
-                <strong>Triangle Detection in H-Free Graphs (ITCS 2026)</strong><br>
-                Joint work with Amir Abboud and Ron Safier.<br>
-                <a href="https://arxiv.org/abs/2511.17224">[arXiv]</a>, <a href="./Slides/H-Free-Slides.pdf">[Slides]</a>, <a href="./Posters/HALG26-Poster.pdf">[Poster]</a>, <a href="https://www.youtube.com/watch?v=uO4VRLRRp-M">[Video]</a>
-            </p>
-            <p>
-                <strong>Recognizing Sumsets is NP-Complete (SODA 2025)</strong><br>
-                Joint work with Amir Abboud, Nick Fischer, and Ron Safier.<br>
-                <a href="https://arxiv.org/abs/2410.18661">[arXiv]</a>, <a href="./Slides/Sumset-Slides.pdf">[Slides]</a>
-            </p>
-            <p>
-                <strong>Worst-Case to Expander-Case Reductions: Derandomized and Generalized (ESA 2024)</strong><br>
-                Joint work with Amir Abboud.<br>
-		<a href="https://arxiv.org/abs/2403.08394">[arXiv]</a>, <a href="./Slides/WTERs-Slides.pdf">[Slides]</a>, <a href="./Posters/HALG24-Poster.pdf">[Poster]</a>
-            </p>
-            <p>
-                <strong>Worst-Case to Expander-Case Reductions (ITCS 2023)</strong><br>
-                Joint work with Amir Abboud.<br>
-                <a href="https://arxiv.org/abs/2211.12833">[arXiv]</a>, <a href="./Slides/WTERs1-Slides.pdf">[Slides]</a>, <a href="./Posters/HALG23-Poster.pdf">[Poster]</a>, <a href="https://www.youtube.com/watch?v=BV31ygbFEtg">[Video]</a>
-            </p>
-            <p>
-                <strong>Improved Compression of the Okamura-Seymour Metric (ISAAC 2022)</strong><br>
-                Joint work with Shay Mozes and Oren Weimann.<br>
-                <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ISAAC.2022.27">[DROPS]</a>, <a href="./Slides/ISAAC22-Slides.pdf">[Slides]</a>
-            </p>
-
         </div>
-        <h2>Teaching</h2>
+        </section>
 
-                <table class="teaching-table">
+        <section aria-labelledby="publications-heading">
+        <h2 id="publications-heading">Publications</h2>
+        
+        <ol class="publication-list" role="list">
+            <li class="publication-item">
+                <h3>Lower Bounds for Structured OMv, APSP, and Triangle Detection</h3>
+                <p class="publication-authors">Joint work with Amir Abboud, Shyan Akmal, and Ron Safier.</p>
+                <div class="publication-meta">
+                    <span class="publication-venue">ITCS 2027</span>
+                </div>
+            </li>
+            <li class="publication-item">
+                <h3>Equivalent Dichotomies for Triangle Detection in Subgraph, Induced, and Colored H-Free Graphs</h3>
+                <p class="publication-authors">Joint work with Amir Abboud and Ron Safier.</p>
+                <div class="publication-meta">
+                    <span class="publication-venue">ESA 2026</span>
+                    <a href="https://arxiv.org/abs/2602.23196">arXiv</a>
+                    <a href="./Slides/ESA26-Slides.pdf">Slides</a>
+                </div>
+            </li>
+            <li class="publication-item">
+                <h3>Witness-Sensitive Detection of Diamonds</h3>
+                <p class="publication-authors">Joint work with Tomer Even, Keren Censor-Hillel, and Virginia Vassilevska Williams.</p>
+                <div class="publication-meta">
+                    <span class="publication-venue">ICALP 2026</span>
+                    <a href="https://arxiv.org/abs/2605.09006">arXiv</a>
+                </div>
+            </li>
+            <li class="publication-item">
+                <h3>Triangle Detection in H-Free Graphs</h3>
+                <p class="publication-authors">Joint work with Amir Abboud and Ron Safier.</p>
+                <div class="publication-meta">
+                    <span class="publication-venue">ITCS 2026</span>
+                    <a href="https://arxiv.org/abs/2511.17224">arXiv</a>
+                    <a href="./Slides/H-Free-Slides.pdf">Slides</a>
+                    <a href="./Posters/HALG26-Poster.pdf">Poster</a>
+                    <a href="https://www.youtube.com/watch?v=uO4VRLRRp-M">Video</a>
+                </div>
+            </li>
+            <li class="publication-item">
+                <h3>Recognizing Sumsets is NP-Complete</h3>
+                <p class="publication-authors">Joint work with Amir Abboud, Nick Fischer, and Ron Safier.</p>
+                <div class="publication-meta">
+                    <span class="publication-venue">SODA 2025</span>
+                    <a href="https://arxiv.org/abs/2410.18661">arXiv</a>
+                    <a href="./Slides/Sumset-Slides.pdf">Slides</a>
+                </div>
+            </li>
+            <li class="publication-item">
+                <h3>Worst-Case to Expander-Case Reductions: Derandomized and Generalized</h3>
+                <p class="publication-authors">Joint work with Amir Abboud.</p>
+                <div class="publication-meta">
+                    <span class="publication-venue">ESA 2024</span>
+                    <a href="https://arxiv.org/abs/2403.08394">arXiv</a>
+                    <a href="./Slides/WTERs-Slides.pdf">Slides</a>
+                    <a href="./Posters/HALG24-Poster.pdf">Poster</a>
+                </div>
+            </li>
+            <li class="publication-item">
+                <h3>Worst-Case to Expander-Case Reductions</h3>
+                <p class="publication-authors">Joint work with Amir Abboud.</p>
+                <div class="publication-meta">
+                    <span class="publication-venue">ITCS 2023</span>
+                    <a href="https://arxiv.org/abs/2211.12833">arXiv</a>
+                    <a href="./Slides/WTERs1-Slides.pdf">Slides</a>
+                    <a href="./Posters/HALG23-Poster.pdf">Poster</a>
+                    <a href="https://www.youtube.com/watch?v=BV31ygbFEtg">Video</a>
+                </div>
+            </li>
+            <li class="publication-item">
+                <h3>Improved Compression of the Okamura-Seymour Metric</h3>
+                <p class="publication-authors">Joint work with Shay Mozes and Oren Weimann.</p>
+                <div class="publication-meta">
+                    <span class="publication-venue">ISAAC 2022</span>
+                    <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ISAAC.2022.27">DROPS</a>
+                    <a href="./Slides/ISAAC22-Slides.pdf">Slides</a>
+                </div>
+            </li>
+        </ol>
+        </section>
+        <section aria-labelledby="teaching-heading">
+        <h2 id="teaching-heading">Teaching</h2>
+
+                <table class="teaching-table" aria-labelledby="teaching-heading">
                     <tr>
                         <td class="year-col">July 2024</td>
                         <td class="details-col">
@@ -106,7 +153,8 @@
                         </td>
                     </tr>
                 </table>
-        </div>
+        </section>
+    </main>
 <script data-goatcounter="https://nathanwallh.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>
