@@ -5,6 +5,8 @@
     --muted: #59636d;
     --accent: #245d87;
     --border: #dedfdb;
+    --abstract-background: #edf3f7;
+    --abstract-border: #aac4d7;
     --page-width: 848px;
 }
 
@@ -201,7 +203,9 @@ a:focus-visible,
 .publication-abstract {
     margin-top: 14px;
     padding: 14px 18px;
-    border-left: 2px solid var(--border);
+    background: var(--abstract-background);
+    border-left: 3px solid var(--abstract-border);
+    border-radius: 6px;
     font-size: 0.9375rem;
     line-height: 1.7;
     overflow-wrap: anywhere;

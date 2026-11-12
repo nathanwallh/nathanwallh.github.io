@@ -1,4 +1,5 @@
 let mathJaxReady;
+const abstractTypesetting = new WeakMap();
 
 function loadMathJax() {
     if (!mathJaxReady) {
@@ -23,6 +24,27 @@ function loadMathJax() {
     return mathJaxReady;
 }
 
+function typesetAbstract(abstract) {
+    if (!abstractTypesetting.has(abstract)) {
+        const ready = loadMathJax()
+            .then((mathJax) => {
+                if (abstract.hidden) {
+                    abstractTypesetting.delete(abstract);
+                    return;
+                }
+
+                return mathJax.typesetPromise([abstract]);
+            })
+            .catch((error) => {
+                abstractTypesetting.delete(abstract);
+                throw error;
+            });
+        abstractTypesetting.set(abstract, ready);
+    }
+
+    return abstractTypesetting.get(abstract);
+}
+
 document.querySelectorAll(".abstract-toggle").forEach((button) => {
     const abstract = document.getElementById(button.getAttribute("aria-controls"));
 
@@ -32,9 +54,11 @@ document.querySelectorAll(".abstract-toggle").forEach((button) => {
         abstract.hidden = expanded;
 
         if (!expanded) {
-            loadMathJax()
-                .then((mathJax) => mathJax.typesetPromise([abstract]))
+            typesetAbstract(abstract)
                 .catch((error) => console.warn("The abstract is available, but its equations could not be typeset.", error));
         }
     });
 });
+
+// Warm up the renderer before the first expansion; a failed download is retried on click.
+loadMathJax().catch(() => {});
